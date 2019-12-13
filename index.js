@@ -12,7 +12,6 @@ $('.form').submit(function(e) {
     }
 });
 
-
 function findPrimeNumbers(number1, number2) {
     const min = number1 > number2 ? number2 : number1;
     const max = number1 < number2 ? number2 : number1;
@@ -32,3 +31,13 @@ function findPrimeNumbers(number1, number2) {
 
     return resultArray;
 }
+
+function getUsers() {
+    fetch('https://reqres.in/api/users?page=2')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        });
+};
+
+getUsers();
