@@ -31,13 +31,3 @@ function findPrimeNumbers(number1, number2) {
 
     return resultArray;
 }
-
-function getUsers() {
-    fetch('https://reqres.in/api/users?page=2')
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-        });
-};
-
-getUsers();
