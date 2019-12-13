@@ -24,6 +24,7 @@ function getUsersInit() {
 getUsersInit();
 
 $('.next').click(function() {
+    $('#prev').removeClass('disabled');
     if (navigation.current !== navigation.maxPage) {
         navigation.current += 1;
         $('.listUsers').empty();
@@ -43,8 +44,7 @@ $('.next').click(function() {
                 });
 
                 if (navigation.current === navigation.maxPage) {
-                    $('#prev').removeClass('disable');
-                    $('#next').addClass('disable');
+                    $('#next').addClass('disabled');
                 }
             });
     }
@@ -52,6 +52,7 @@ $('.next').click(function() {
 
 
 $('.prev').click(function() {
+    $('#next').removeClass('disabled');
     if (navigation.current !== 1) {
         navigation.current -= 1;
         $('.listUsers').empty();
@@ -69,6 +70,9 @@ $('.prev').click(function() {
                     </div>`
                     );
                 });
+                if (navigation.current === 1) {
+                    $('#prev').addClass('disabled');
+                }
             });
         }
 });
