@@ -43,8 +43,8 @@ $('.next').click(function() {
                 });
 
                 if (navigation.current === navigation.maxPage) {
-                    $('.prev-block').removeClass('disable');
-                    $('.next-block').addClass('disable');
+                    $('#prev').removeClass('disable');
+                    $('#next').addClass('disable');
                 }
             });
     }
