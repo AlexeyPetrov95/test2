@@ -8,7 +8,7 @@ $('.form').submit(function(e) {
     } else {
         $('.error').text('');
         const numbers = findPrimeNumbers(+number1Str, +number2Str);
-        $('.result').text(`There are prime numbers: ${numbers}`);
+        $('.result').text(`There are prime numbers ${numbers.length}: ${numbers}`);
     }
 });
 
