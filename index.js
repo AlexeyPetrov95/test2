@@ -7,5 +7,28 @@ $('.form').submit(function(e) {
         $('.error').text('Invalid input, please try again');
     } else {
         $('.error').text('');
+        const numbers = findPrimeNumbers(+number1Str, +number2Str);
+        $('.result').text(`There are prime numbers: ${numbers}`);
     }
 });
+
+
+function findPrimeNumbers(number1, number2) {
+    const min = number1 > number2 ? number2 : number1;
+    const max = number1 < number2 ? number2 : number1;
+    const resultArray = [];
+
+    for (var counter = min; counter <= max; counter++) {
+        var notPrime = false;
+        for (var i = 2; i <= counter; i++) {
+            if (counter%i===0 && i!==counter) {
+                notPrime = true;
+            }
+        }
+        if (!notPrime) {
+            resultArray.push(counter);
+        }
+    }
+
+    return resultArray;
+}
